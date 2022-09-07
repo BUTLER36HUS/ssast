@@ -95,8 +95,8 @@ class ASTModel(nn.Module):
             self.original_embedding_dim = self.v.pos_embed.shape[2]
 
             # SSL Pretraining Code
-            self.softmax = nn.Softmax(dim=-1)
-            self.lsoftmax = nn.LogSoftmax(dim=-1)
+            self.softmax = nn.Softmax(dim=-1) 
+            self.lsoftmax = nn.LogSoftmax(dim=-1) # use for NCE loss
             self.fshape, self.tshape = fshape, tshape
             self.fstride, self.tstride = fstride, tstride
             self.input_fdim, self.input_tdim = input_fdim, input_tdim
